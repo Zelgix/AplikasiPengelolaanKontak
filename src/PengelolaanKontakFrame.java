@@ -3,19 +3,54 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-/**
- *
- * @author USER
- */
-public class PengelolaanKontakFrame extends javax.swing.JFrame {
+import controller.KontakController;
+import java.io.*;
+import model.Kontak;
 
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class PengelolaanKontakFrame extends javax.swing.JFrame {
+    private DefaultTableModel model;
+    private KontakController controller;
     /**
      * Creates new form PengelolaanKontakFrame
      */
     public PengelolaanKontakFrame() {
         initComponents();
+        controller = new KontakController();
+        model = new DefaultTableModel(new String[]{"No", "Nama", "Nomor Telepon", "Kategori"}, 0);
+        tblKontak.setModel(model);
+        
+        loadContacts();
     }
-
+     private void loadContacts() {
+        try {
+            model.setRowCount(0);
+            List<Kontak> contacts = controller.getAllContacts();
+            
+            int rowNumber = 1;
+            for (Kontak contact : contacts) {
+                model.addRow(new Object[]{
+                    rowNumber++,
+                    contact.getNama(),
+                    contact.getNomorTelepon(),
+                    contact.getKategori()
+                });
+            }
+        } catch (SQLException e) {
+            showError(e.getMessage());
+        }
+    }
+    
+    private void showError(String message) {
+        JOptionPane.showMessageDialog(this, message, "Error", 
+            JOptionPane.ERROR_MESSAGE);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
