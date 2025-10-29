@@ -7,6 +7,8 @@
             <file>file:/D:/SEMESTER_5/PBO_2/AplikasiPengelolaanKontak/src/database/DatabaseSetup.java</file>
             <file>file:/D:/SEMESTER_5/PBO_2/AplikasiPengelolaanKontak/src/PengelolaanKontakFrame.java</file>
             <file>file:/D:/SEMESTER_5/PBO_2/AplikasiPengelolaanKontak/src/controller/KontakController.java</file>
+            <file>file:/D:/SEMESTER_5/PBO_2/AplikasiPengelolaanKontak/src/model/Kontak.java</file>
+            <file>file:/D:/SEMESTER_5/PBO_2/AplikasiPengelolaanKontak/src/model/KontakDAO.java</file>
         </group>
     </open-files>
 </project-private>
