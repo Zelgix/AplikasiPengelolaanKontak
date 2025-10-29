@@ -129,8 +129,14 @@ private void clearInputFields() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        PanelUtama.setBackground(new java.awt.Color(0, 102, 102));
+
         lblJudul.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblJudul.setForeground(new java.awt.Color(255, 255, 255));
         lblJudul.setText("APLIKASI PENGELOLAAN KONTAK");
+        PanelUtama.add(lblJudul);
+
+        PanelKomponen.setBackground(new java.awt.Color(0, 153, 153));
 
         lblNama.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblNama.setText("Nama Kontak");
@@ -150,8 +156,10 @@ private void clearInputFields() {
             }
         });
 
+        cmbKategori.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cmbKategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Keluarga", "Teman", "Kantor" }));
 
+        btnTambah.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnTambah.setText("Tambah");
         btnTambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,6 +167,7 @@ private void clearInputFields() {
             }
         });
 
+        btnEdit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnEdit.setText("Edit");
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,6 +175,7 @@ private void clearInputFields() {
             }
         });
 
+        btnHapus.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnHapus.setText("Hapus");
         btnHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,6 +183,7 @@ private void clearInputFields() {
             }
         });
 
+        tblKontak.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         tblKontak.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -191,6 +202,7 @@ private void clearInputFields() {
         });
         jScrollPane1.setViewportView(tblKontak);
 
+        btnExport.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnExport.setText("Export");
         btnExport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,6 +210,7 @@ private void clearInputFields() {
             }
         });
 
+        btnImport.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnImport.setText("Import");
         btnImport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -283,24 +296,16 @@ private void clearInputFields() {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelUtama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
-                .addComponent(lblJudul)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(PanelKomponen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(PanelUtama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelUtama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblJudul)))
-                .addGap(18, 18, 18)
+                .addComponent(PanelUtama, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelKomponen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
